@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Quickstart Tutorial</title>
+    <script id="sap-ui-bootstrap" type="text/javascript"
+        src="https://sapui5.hana.ondemand.com/1.42.6/resources/sap-ui-core.js" data-sap-ui-theme="sap_belize"
+        data-sap-ui-libs="sap.m"></script>
+    <!--
+        I've tried to do this the normal way (with src and requires) 
+        however after 2 hours of angry googling and finding nothing useful this is the only way I could make it at least work.
+    -->
+    <script>
+        sap.ui.define([
+            "sap/m/Button",
+            "sap/m/MessageToast"
+        ], function (Button, MessageToast) {
+            "use strict";
+
+            new Button({
+                text: "Ready...",
+                press: function () {
+                    MessageToast.show("Hello World!");
+                }
+            })//.placeAt("content");
+
+        });
+
+        sap.ui.define(["sap/m/Label", "sap/m/Input", "sap/m/Select" ], function (Label, Input, Select) {
+            "use strict";
+            new Label({
+                text: "Prašome užpildyti visus langelius ir pasirinkti datą",
+                textAlign : "Center",
+                width: "100%",
+            }).placeAt("content");
+
+            new Input({
+                placeholder: "Vardas",
+                required: true,
+                width: "100%",
+            }).placeAt("content");
+
+            new Label({
+                text: "Paciento Pavardė",
+                textAlign : "Center",
+            })//.placeAt("content");
+
+            new Input({
+                placeholder: "Pavardė",
+                required: true,
+                width: "100%", 
+            }).placeAt("content");
+
+            new sap.m.Select({
+                placeholder: "Pasirinkite vizito laiką",
+                width: "50%",
+            }).placeAt('content');
+        });
+
+        sap.ui.define(['sap/ui/core/mvc/Controller', 'sap/ui/unified/DateRange'],
+            function (Controller, DateRange) {
+                "use strict";
+                new sap.ui.unified.Calendar({
+                    width: "100%",   
+                }).placeAt('content'); // Constructing the calendar object
+            });
+
+        
+        // I'm 100% sure this is absolutely not the way to be doing this,
+        // but the documentation for SAPUI5 elements doesn't explain anything and it's way too hard to reserse engineer it. 
+        // I'm supposed to send an XML file to the browser, and the innner sap ui core should somehow find it and initialize it and parse it.
+        // I'll guess from now I'll use SAPUI5's elements for front-end only, and then try to somehow retrieve inputs from them.
+        // Spaghetti, I know, but as of right now, it's the only way I see on how to do this..
+
+        $('document').ready(function () {
+            /*console.log(document.getElementById("__button0-content").innerHTML);
+            document.getElementById("__button0").addEventListener("click", submitClick);
+
+            function submitClick() {
+                var elements = document.getElementsByClassName("sapUiCalItemSel");
+                var value = elements[0].getAttribute('aria-label');
+                console.log(value);
+            }*/
+            // Once again, dunno how to do XML and JSON stuff so I'm trying to find ways around it
+            /*var select = document.getElementById("sap-ui-static");
+            var div = document.createElement('div');
+            div.text = "21";
+            select.append(div, 0);
+            select.appendChild(div, 2);*/
+        });
+    </script>
+</head>
+<body class="sapUiBody" id="content">
+</body>
+
+</html>
