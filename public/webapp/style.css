@@ -1,0 +1,21 @@
+.paddings {
+    padding: 4px 15px 0px 15px !important;
+}
+
+.sapMInputValHelp {
+    right: 15px !important;
+}
+
+#__calendar0 {
+    background: none;
+}
+
+#__calendar0--Head {
+    border: 1px solid #bfbfbf;
+    border-bottom: none;
+}
+
+#__calendar0-content {
+    border: 1px solid #bfbfbf;
+    border-top: none;
+}

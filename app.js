@@ -1,7 +1,5 @@
 const http = require('http');
-const nStatic = require('node-static');
 const mysql = require('mysql');
-const fileServer = new nStatic.Server('./public');
 const express = require('express');
 const bodyParser = require('body-parser');
 const app = express();
@@ -38,6 +36,16 @@ connection.connect(function(err){
 // Serving the home page when the request is '/'
 app.get('/', function (req, res) {
     res.sendFile(__dirname + '/public/webapp/index.html');
+});
+
+// Serving the stylesheet when the request is '/style.css'
+app.get('/style.css', function (req, res) {
+    res.sendFile(__dirname + '/public/webapp/style.css');
+});
+
+// Serving the script file when the request is '/index.js'
+app.get('/index.js', function (req, res) {
+    res.sendFile(__dirname + '/public/webapp/index.js');
 });
 
 // Receiving a post request from '/postreq'. Parsing the JSON body and inserting into the database.
