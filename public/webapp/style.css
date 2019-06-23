@@ -13,6 +13,7 @@
 #__calendar0--Head {
     border: 1px solid #bfbfbf;
     border-bottom: none;
+    max-width: none;
 }
 
 #__calendar0-content {
