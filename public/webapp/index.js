@@ -39,13 +39,21 @@ sap.ui.define([
             // I'll guess from now I'll use SAPUI5's elements for front-end only, and then try to somehow retrieve inputs from them.
             // Spaghetti, I know, but as of right now, it's the only way I see on how to do this.
 
+            // Getting the date of reservation
+            var today = new Date();
+            var dd = String(today.getDate()).padStart(2, '0');
+            var mm = String(today.getMonth() + 1).padStart(2, '0');
+            var yyyy = today.getFullYear();
+            today = yyyy + mm + dd;
+
+
             // Getting the inputs
 
             var firstName = document.getElementById("__input0-inner").value;
             var lastName = document.getElementById("__input1-inner").value;
             var time = document.getElementById("__picker0-inner").value;
             var CalendarSelection = document.getElementsByClassName("sapUiCalItemSel");
-            var date = CalendarSelection[0].getAttribute('aria-label');
+            var date = CalendarSelection[0].getAttribute('data-sap-day');
             console.log('FirstName' + firstName,
                 'LastName' + lastName,
                 'Date' + date,
@@ -59,8 +67,18 @@ sap.ui.define([
                 FirstName: firstName,
                 LastName: lastName,
                 Date: date,
-                Time: time
+                Time: time,
+                DateOfRes : today
             }));
+            req.onreadystatechange = function () {
+                // If the request completed, close the extension popup
+                if (req.readyState == 4){
+                    if (req.status == 200){
+                        var res = req.responseText;
+                        console.log (res);
+                    }
+                }
+            };
         }
     }).placeAt("content");
 
@@ -110,7 +128,6 @@ sap.ui.define(['sap/ui/core/mvc/Controller', 'sap/ui/unified/DateRange'],
 
 $('document').ready(function () {
     // Adding some simple CSS tweaks so the design is not as bulky, also some is styling in  style.css file
-
     document.getElementById("__input0").classList.add("paddings");
     document.getElementById("__input1").classList.add("paddings");
     document.getElementById('__calendar0').classList.add("paddings");
