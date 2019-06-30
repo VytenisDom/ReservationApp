@@ -6,8 +6,77 @@
     right: 15px !important;
 }
 
+.hide {
+    display: none !important;
+}
+
+#__button0 {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    right: 0;
+    height: 100%;
+    width: 50%;
+    padding: 15px;
+}
+
+#__button1 {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 50%;
+    padding: 15px;
+}
+
+#__button0-inner {
+    border: none !important;
+    height: 100% !important;
+}
+
+#__button1-inner {
+    border: none !important;
+    height: 100% !important;
+}
+
+#__button0-content {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+}
+
+#__button1-content {
+    top: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%);
+    position: absolute;
+    text-align: center;
+    width: 100%;
+    font-size: 30px;
+}
+
+#__input0 {
+    padding: 4px 15px 0px 15px !important;
+}
+
+#__input1 {
+    padding: 4px 15px 0px 15px !important;
+}
+
+#__picker0 {
+    padding: 4px 15px 0px 15px !important;
+}
+
 #__calendar0 {
     background: none;
+    padding: 4px 15px 0px 15px !important;
 }
 
 #__calendar0--Head {

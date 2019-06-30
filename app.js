@@ -90,12 +90,13 @@ app.post('/postreq', function (req, res) {
                                 // Passed all validations
 
                                 if (success) {
-                                    connection.query("INSERT INTO appregistrations (FirstName, LastName, Date, Time, DateOfRes) VALUES('" +
+                                    connection.query("INSERT INTO appregistrations (FirstName, LastName, Date, Time, DateOfRes, DatePreview) VALUES('" +
                                         req.body.FirstName + "', " +
                                         "'" + req.body.LastName + "', " +
                                         "'" + req.body.Date + "', " +
                                         "'" + req.body.Time + "', " +
-                                        "'" + req.body.DateOfRes + "' )",
+                                        "'" + req.body.DateOfRes + "', " +
+                                        "'" + req.body.DatePreview + "' )",
                                         function (err) {
                                             if (err) {
                                                 console.log("Error : Bad query declaration.");
@@ -129,12 +130,13 @@ app.post('/postreq', function (req, res) {
                                     // Passed all validations
 
                                     if (success) {
-                                        connection.query("INSERT INTO appregistrations (FirstName, LastName, Date, Time, DateOfRes) VALUES('" +
+                                        connection.query("INSERT INTO appregistrations (FirstName, LastName, Date, Time, DateOfRes, DatePreview) VALUES('" +
                                             req.body.FirstName + "', " +
                                             "'" + req.body.LastName + "', " +
                                             "'" + req.body.Date + "', " +
                                             "'" + req.body.Time + "', " +
-                                            "'" + req.body.DateOfRes + "' )",
+                                            "'" + req.body.DateOfRes + "', " +
+                                            "'" + req.body.DatePreview + "' )",
                                             function (err) {
                                                 if (err) {
                                                     console.log("Error : Bad query declaration.");
