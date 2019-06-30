@@ -32,6 +32,13 @@
     padding: 15px;
 }
 
+#__button2 {
+    position: relative;
+    padding: 15px;
+    top: -300px;
+    width: 50%;
+}
+
 #__button0-inner {
     border: none !important;
     height: 100% !important;

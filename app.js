@@ -118,7 +118,6 @@ app.post('/postreq', function (req, res) {
                                 // The date is properly set.
                                 // Get the date of reservation
                                 var DateOfReservation = rows[0].DateOfRes;
-                                console.log("Date of res " + DateOfReservation);
                                 var y = DateOfReservation.slice(0, 4);
                                 var m = DateOfReservation.slice(4, 6);
                                 var d = DateOfReservation.slice(6, 8);

@@ -15,8 +15,6 @@ sap.ui.define([
                 })
                 .then(function (json) {
                     var tr;
-                    console.log(json);
-                    console.log(json.length);
                     for (var i = 0; i < json.length; i++) {
                         tr = $('<tr/>');
                         tr.append("<td>" + json[i].ID + "</td>");
@@ -99,7 +97,6 @@ sap.ui.define([
                     var CalendarSelection = document.getElementsByClassName("sapUiCalItemSel");
                     var date = CalendarSelection[0].getAttribute('data-sap-day');
                     var datepreview = CalendarSelection[0].getAttribute('aria-label');
-                    console.log(datepreview);
 
                     // Sending the POST request to the server
                     var req = new XMLHttpRequest();
@@ -129,7 +126,7 @@ sap.ui.define([
                     };
                 }
             }).placeAt("content");
-            
+
         }
     }).placeAt("content");
 });
@@ -145,5 +142,5 @@ $('document').ready(function () {
             document.getElementById("__button0").classList.add("hide");
             document.getElementById("__button1").classList.add("hide");
         }, 50);
-    }    
+    }
 });
