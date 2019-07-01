@@ -1,0 +1,9 @@
+CREATE TABLE appregistrations (
+ID INT(6) UNSIGNED AUTO_INCREMENT PRIMARY KEY,
+FirstName VARCHAR(30),
+LastName VARCHAR(30),
+Date VARCHAR(10),
+Time VARCHAR(10),
+DateOfRes VARCHAR(10),
+DatePreview VARCHAR(50)
+)
